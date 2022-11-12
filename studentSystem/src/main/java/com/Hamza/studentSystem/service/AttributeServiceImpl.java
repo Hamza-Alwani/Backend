@@ -16,4 +16,9 @@ public class AttributeServiceImpl implements AttributeService{
     public List<Attribute> getAllAttributes() {
         return attributeRepository.findAll();
     }
+
+    @Override
+    public void addAttribute(Attribute attribute) {
+        System.out.println(attributeRepository.save(attribute));
+    }
 }

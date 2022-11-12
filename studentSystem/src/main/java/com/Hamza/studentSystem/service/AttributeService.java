@@ -8,4 +8,10 @@ public interface AttributeService {
 
     public List<Attribute> getAllAttributes();
 
+
+
+    public void addAttribute(Attribute attribute);
+
+
+
 }
