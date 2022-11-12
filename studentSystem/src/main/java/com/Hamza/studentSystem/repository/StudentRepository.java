@@ -1,0 +1,18 @@
+package com.Hamza.studentSystem.repository;
+
+import com.Hamza.studentSystem.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student,Integer> {
+
+    @Query(value = "SELECT * FROM `student` s WHERE s.name=:name", nativeQuery = true)
+    public Optional<Student> getByName(@Param("name") String name);
+
+
+}
